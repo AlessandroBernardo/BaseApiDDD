@@ -6,13 +6,18 @@ namespace Api.Data.Context
 {
     public class ContextFactory : IDesignTimeDbContextFactory<MyContext>
     {
-        IConfiguration configuration;
+        //IConfiguration configuration;
         public MyContext CreateDbContext(string[] args)
         {
-            //var conn = "";
+
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
-            //optionsBuilder.UseMySql(configuration.GetConnectionString("DefaultConnection"));
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+
+            var conn = "Data Source=DESKTOP-I5FIN5A;Initial Catalog=CursoCoreApi; Integrated Security=True;";
+
+            //var strCon = optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+
+            optionsBuilder.UseSqlServer(conn);
+
             return new MyContext(optionsBuilder.Options);
         }
     }
