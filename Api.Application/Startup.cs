@@ -72,9 +72,9 @@ namespace Api.Application
    
 
             //redirect para swagger quando executa aplicação.
-            var option = new RewriteOptions();
-            option.AddRedirect("^$", "swagger");
-            app.UseRewriter(option);
+            //var option = new RewriteOptions();
+            //option.AddRedirect("^$", "swagger");
+            //app.UseRewriter(option);
 
 
             app.UseMvc();

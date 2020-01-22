@@ -103,5 +103,9 @@ namespace Api.Data.Repository
         {
             return await _dataset.AnyAsync(p => p.Id.Equals(id));
         }
+
+        public interface IUserRepository
+        {
+        }
     }
 }
