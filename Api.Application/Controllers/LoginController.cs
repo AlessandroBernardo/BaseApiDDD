@@ -21,7 +21,7 @@ namespace Api.Application.Controllers
 
             try
             {
-                return !ModelState.IsValid ? BadRequest(ModelState) : userEntity == null ? BadRequest() : result = await service.FindByLogin(userEntity) != null ? Ok(result) : NotFound();
+                return !ModelState.IsValid ? BadRequest(ModelState) : userEntity == null ? BadRequest() : (result = await service.FindByLogin(userEntity)) != null ? Ok(result) : NotFound();
 
             }
             catch (ArgumentException e)
